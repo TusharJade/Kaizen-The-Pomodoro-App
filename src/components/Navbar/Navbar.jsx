@@ -5,15 +5,21 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [theme, setTheme] = useState(false);
   return (
-    <nav className="navbar-container">
-      <Link to="/" className="kiazen-container Link">
+    <header className="navbar-container">
+      <Link to="/" className="kiazen-container">
         <img src="/assets/pomo.png" className="pomo-img" alt="error" />
         <div className="kaizen-text">Kaizen</div>
       </Link>
       <div className="links-container">
-        <div className="nav-links">Tasks</div>
-        <div className="nav-links">Pomodoro</div>
-        <div className="nav-links">Login</div>
+        <Link to="/tasks" className="nav-links">
+          Tasks
+        </Link>
+        <Link to="/pomodoro-time" className="nav-links">
+          Pomodoro
+        </Link>
+        <Link to="/login" className="nav-links">
+          Login
+        </Link>
         <div className="theme-icn">
           {theme ? (
             <i
@@ -25,7 +31,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

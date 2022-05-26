@@ -1,0 +1,50 @@
+.landing-container{
+   margin-top: 3.7rem;
+}
+
+.main-img-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.landing-img{
+    width: 55%;
+}
+
+.text-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 9rem;
+}
+
+.heading-text-question{
+    font-size: 1.7rem;
+    font-weight: 600;
+    width: 12rem;
+}
+
+.heading-text-answer{
+    width: 22rem;
+    font-size: 15.7px;
+}
+
+.line{
+    width: 8rem;
+    border-bottom: 2px solid black;
+    margin: 1.2rem 0;
+}
+
+.btn-get-started{
+    width: 6.4rem;
+    border: none;
+    padding: 6px 0;
+    color: white;
+    background-color: #664EFF;
+    border-radius: 7px;
+    margin: 1rem 0;
+    cursor: pointer;
+}
