@@ -1,11 +1,11 @@
-.navbar-container{
+.main-container{
     height: 3.7rem;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    z-index: 100;
+    z-index: 1;
     top: 0;
     background-color: white;
     box-shadow: 0px 0px 15px 0px rgba(110,110,110,0.5);
@@ -14,7 +14,7 @@
 .kiazen-container{
     display: flex;
     align-items: center;
-    margin-left: 4rem;
+    margin-left: 6rem;
     cursor: pointer;
     color: black;
     text-decoration: none;
@@ -34,14 +34,18 @@
     margin: 0 3px 7px 0;
 }
 
-.links-container{
-    width: 22rem;
+.nav-container{
+    display: flex;
+    margin-right: 4rem;
+}
+
+.links-ul{
+    width: 18rem;
     font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    cursor: pointer;
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 
 .nav-links{
@@ -65,4 +69,53 @@
     color: #664EFF;
 }
 
+.bars{
+    display: none;
+}
+
+@media (max-width:900px) {
+    .kiazen-container{
+        margin-left: 1.5rem;
+    }
+
+    .links-ul{
+        position: fixed;
+        background-color: white;
+        z-index: -1;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0 0.8rem 1.5rem;
+        margin: 3.7rem 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .lists{
+        padding: 0.5rem 0;
+    }
+
+    .hamberger-active{
+        top: 0;
+    }
+
+    .nav-container{
+        width: 5.5rem;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 1rem;
+    }
+
+    .bars{
+        display: block;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .cross-icn{
+        font-size: 1.4rem;
+    }
+}
 
