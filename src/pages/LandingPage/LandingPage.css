@@ -1,5 +1,9 @@
 .landing-container{
-   margin-top: 4rem;
+   margin-top: 3.7rem;
+}
+
+.landing-img{
+    width: 55%;
 }
 
 .main-img-container{
@@ -7,10 +11,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-}
-
-.landing-img{
-    width: 55%;
 }
 
 .text-container-outerbox{
@@ -35,7 +35,6 @@
     width: 22rem;
     font-size: 15.7px;
     font-weight: 500;
-    word-break: break-all;
 }
 
 .line{
@@ -56,6 +55,46 @@
     cursor: pointer;
 }
 
+.how-to-use-heading{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.how-to-usr-answer{
+    font-size: 17px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.task-img-container{
+    width: 100%;
+    display: flex;
+    margin: 2rem 0 0 0;
+    justify-content: space-around;
+}
+
+.task-container{
+    width: 24%;
+    text-align: center;
+}
+
+.task-imgs{
+   width: 70%;
+}
+
+.custom-task-heading{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.custom-task-para{
+    font-size: 15.2px;
+    font-weight: 500;
+    margin-top: 9px;
+}
 
 @media (max-width:1248px) {
     .landing-container{
@@ -74,7 +113,6 @@
     .heading-text-question{
         width: auto;
         text-align: center;
-        margin-bottom: 8px;
     }
 
     .line{
@@ -83,22 +121,64 @@
 
     .heading-text-answer{
         width: auto;
+        text-align: center;
         font-weight: 500;
-        margin: 0 2rem 1rem 2rem;
-        word-break: break-all;
+        margin: 6.5px 2rem 1rem 2rem;
     }
     
     .btn-get-started{
         margin: auto;
     }
+
+    .how-to-usr-answer{
+        margin: 5px 2rem 1rem 2rem;
+    }
+
+    .how-to-use-heading{
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width:1020px) {
+    .task-img-container{
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+
+    .task-container{
+        width: 50%;
+        margin-top: 1rem;
+    }
+
+    .task-imgs{
+        width: 65%;
+     }
 }
 
 @media (max-width:620px) {
     .landing-container{
-        margin-top: 3.5rem;
+        margin-top: 3.7rem;
      }
+
+     .main-img-container{
+        flex-direction: column;
+    }
 
      .landing-img{
         width:100%;
+    }
+
+    .heading-text-answer{
+        margin: 9px 1.3rem 1rem 1.3rem;
+    }
+
+    .how-to-usr-answer{
+        margin: 8px 1.3rem 1rem 1.3rem;
+    }
+
+    .task-container{
+        width: 60%;
+        margin-top: 2rem;
     }
 }
