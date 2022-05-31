@@ -1,5 +1,7 @@
 .landing-container{
    margin-top: 3.7rem;
+   background-color: var(--landing-page-bg);
+   color: var(--landing-page-text);
 }
 
 .landing-img{
@@ -39,7 +41,7 @@
 
 .line{
     width: 8rem;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--landing-page-text);
     margin: 13px 0 1.1rem 0;
 }
 
@@ -94,6 +96,10 @@
     font-size: 15.2px;
     font-weight: 500;
     margin-top: 9px;
+}
+
+.middle-contianer{
+    padding-bottom: 1.5rem ;
 }
 
 @media (max-width:1248px) {

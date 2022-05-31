@@ -7,8 +7,9 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    background-color: white;
-    box-shadow: 0px 0px 15px 0px rgba(110,110,110,0.5);
+    background-color: var(--nav-bg);
+    box-shadow: var(--nav-box-shadow);
+    transition: 0.8s;
 }
 
 .kiazen-container{
@@ -16,12 +17,12 @@
     align-items: center;
     margin-left: 6rem;
     cursor: pointer;
-    color: black;
+    color: var(--nav-text);
     text-decoration: none;
 }
 
 .kaizen-text{
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
 }
@@ -37,6 +38,7 @@
 .nav-container{
     display: flex;
     margin-right: 4rem;
+    color: var(--nav-text);
 }
 
 .links-ul{
@@ -51,7 +53,7 @@
 .nav-links{
     transition: color 0.3s ease-in-out;
     text-decoration: none;
-    color: black;
+    color: var(--nav-text);
 }
 
 .nav-links:hover{
@@ -62,7 +64,7 @@
     font-size: 1.25rem;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
-    color: black;
+    color: var(--nav-text);
 }
 
 .theme-icn:hover{
@@ -80,7 +82,7 @@
 
     .links-ul{
         position: fixed;
-        background-color: white;
+        background-color: var(--nav-bg);
         z-index: -1;
         top: -100%;
         left: 0;

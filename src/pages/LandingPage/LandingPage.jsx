@@ -6,7 +6,11 @@ const LandingPage = () => {
     <>
       <section className="landing-container">
         <div className="main-img-container">
-          <img src="/assets/time1.jpg" className="landing-img" alt="error" />
+          <img
+            src="/assets/heading-img.png"
+            className="landing-img"
+            alt="error"
+          />
           <div className="text-container-outerbox">
             <div className="text-container">
               <div className="heading-text-question">Why do we use it ?</div>

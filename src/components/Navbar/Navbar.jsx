@@ -1,12 +1,17 @@
 import "./Navbar.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState({
-    themeIcnStatus: false,
     hambergerIcn: false,
+    theme: "light-theme",
   });
+
+  useEffect(() => {
+    document.body.className = toggle.theme;
+  }, [toggle.theme]);
 
   return (
     <header className="main-container">
@@ -57,18 +62,24 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="theme-icn">
-          {toggle.themeIcnStatus ? (
+          {toggle.theme === "dark-theme" ? (
             <i
               className="fa-solid fa-sun light-theme"
               onClick={() =>
-                setToggle((item) => ({ ...item, themeIcnStatus: false }))
+                setToggle((item) => ({
+                  ...item,
+                  theme: "light-theme",
+                }))
               }
             ></i>
           ) : (
             <i
               className="fa-solid fa-moon"
               onClick={() =>
-                setToggle((item) => ({ ...item, themeIcnStatus: true }))
+                setToggle((item) => ({
+                  ...item,
+                  theme: "dark-theme",
+                }))
               }
             ></i>
           )}
