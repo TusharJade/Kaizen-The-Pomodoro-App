@@ -1,0 +1,34 @@
+.footer{
+    background-color: var(--footer-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition:  0.8s;
+}
+
+.footer-text{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0 8px 0;
+}
+
+.code-icn{
+    color: #aba8a8;
+    padding: 0 2px;
+}
+
+.footer-mid-text{
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.footer-container{
+    margin: 10px 0 9px 0;
+}
+
+.footer-icn{
+    color: white;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}

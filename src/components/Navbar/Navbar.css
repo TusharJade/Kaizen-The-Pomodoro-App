@@ -1,0 +1,123 @@
+.main-container{
+    height: 3.7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: var(--nav-bg);
+    box-shadow: var(--nav-box-shadow);
+    transition: 0.8s;
+}
+
+.kaizen-container{
+    display: flex;
+    align-items: center;
+    margin-left: 6rem;
+    cursor: pointer;
+    color: var(--nav-text);
+    text-decoration: none;
+}
+
+.kaizen-text{
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.kaizen-text:hover{
+    color: var(--main-color);
+}
+
+.pomo-img{
+    margin: 0 5px 5px 0;
+}
+
+.nav-container{
+    display: flex;
+    margin-right: 4rem;
+    color: var(--nav-text);
+}
+
+.links-ul{
+    width: 18rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 1rem;
+}
+
+.nav-links{
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: var(--nav-text);
+}
+
+.nav-links:hover{
+    color: var(--main-color);
+}
+
+.theme-icn{
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    color: var(--nav-text);
+}
+
+.theme-icn:hover{
+    color: var(--main-color);
+}
+
+.bars{
+    display: none;
+}
+
+@media (max-width:900px) {
+    .kaizen-container{
+        margin-left: 1.5rem;
+    }
+
+    .links-ul{
+        position: fixed;
+        background-color: var(--nav-bg);
+        z-index: -1;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0 0.8rem 1.5rem;
+        margin: 3.7rem 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .lists{
+        padding: 0.5rem 0;
+    }
+
+    .hamberger-active{
+        top: 0;
+    }
+
+    .nav-container{
+        width: 5.5rem;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 1rem;
+    }
+
+    .bars{
+        display: block;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+    .cross-icn{
+        font-size: 1.4rem;
+    }
+}
+
