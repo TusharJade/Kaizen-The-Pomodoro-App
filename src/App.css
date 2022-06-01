@@ -11,6 +11,11 @@ li{
     list-style: none;
 }
 
+:root{
+    --white: white;
+    --main-color: #664EFF;
+}
+
 .light-theme{
     --nav-bg: white;
     --nav-text: black;

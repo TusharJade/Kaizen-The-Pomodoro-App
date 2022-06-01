@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <header className="main-container">
       <div>
-        <Link to="/" className="kiazen-container">
+        <Link to="/" className="kaizen-container">
           <img src="/assets/pomo.png" className="pomo-img" alt="error" />
           <div className="kaizen-text">Kaizen</div>
         </Link>

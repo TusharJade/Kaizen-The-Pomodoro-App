@@ -50,8 +50,8 @@
     font-weight: 500;
     border: none;
     padding: 7px 0;
-    color: white;
-    background-color: #664EFF;
+    color: var(--white);
+    background-color: var(--main-color);
     border-radius: 7px;
     margin: 1.1rem 0;
     cursor: pointer;

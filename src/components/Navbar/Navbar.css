@@ -12,7 +12,7 @@
     transition: 0.8s;
 }
 
-.kiazen-container{
+.kaizen-container{
     display: flex;
     align-items: center;
     margin-left: 6rem;
@@ -28,7 +28,7 @@
 }
 
 .kaizen-text:hover{
-    color: #664EFF;
+    color: var(--main-color);
 }
 
 .pomo-img{
@@ -57,7 +57,7 @@
 }
 
 .nav-links:hover{
-    color: #664EFF;
+    color: var(--main-color);
 }
 
 .theme-icn{
@@ -68,7 +68,7 @@
 }
 
 .theme-icn:hover{
-    color: #664EFF;
+    color: var(--main-color);
 }
 
 .bars{
@@ -76,7 +76,7 @@
 }
 
 @media (max-width:900px) {
-    .kiazen-container{
+    .kaizen-container{
         margin-left: 1.5rem;
     }
 

@@ -1,6 +1,6 @@
 .footer{
     background-color: var(--footer-bg);
-    color: white;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     text-align: center;

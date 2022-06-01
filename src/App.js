@@ -1,7 +1,5 @@
 import "./App.css";
-import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
 import {
   LandingPage,
   LoginPage,
@@ -9,6 +7,8 @@ import {
   PomodoroTimerPage,
   SignupPage,
 } from "./pages/index";
+import { Navbar } from "./components/Navbar/Navbar";
+import Mockman from "mockman-js";
 
 function App() {
   return (
