@@ -1,7 +1,9 @@
-import { Footer } from "../../components/Footer/Footer";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
+import { Footer } from "../../components/Footer/Footer";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="landing-container">
@@ -20,7 +22,12 @@ const LandingPage = () => {
                 your productivity. Using this method, you break your workday
                 into 25 minute chunks separated by five minute breaks.
               </p>
-              <button className="btn-get-started">Get Started</button>
+              <button
+                onClick={() => navigate("/tasks")}
+                className="btn-get-started"
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </div>
