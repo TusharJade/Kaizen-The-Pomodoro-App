@@ -8,7 +8,7 @@ const Footer = () => {
           Made with <i className="fa-solid fa-code code-icn"></i> by Tushar Jade
         </div>
         <div className="footer-mid-text">
-          <i class="fa-solid fa-copyright"></i> Kaizen 2022
+          <i className="fa-solid fa-copyright"></i> Kaizen 2022
         </div>
         <div className="footer-container">
           <a

@@ -9,7 +9,7 @@
 }
 
 .task-todo-box{
-    width: 73%;
+    width: 70%;
     margin: 3rem auto 0 auto ;
 }
 
@@ -27,7 +27,7 @@
 .todo-list-container{
     background-color: var(--task-page-todo);
     color: var(--task-page-text);
-    width: 75%;
+    width: 72%;
     margin: 1rem auto 0 auto;
     padding: 1.7rem;
     border-radius: 1.6rem;
@@ -107,6 +107,5 @@
     .add-task{
         font-size: 1.5rem;
     }
-
 
 }
