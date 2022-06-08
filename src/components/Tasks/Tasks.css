@@ -25,7 +25,10 @@
     align-items: center;
     margin-left: auto;
     font-size: 1.15rem;
-    gap: 15px;
     cursor: pointer;
-    color: #252323;
+    color: var(--all-task-icn);
+}
+
+.all-task-icns > i {
+    margin: 0 0 0 15px;
 }

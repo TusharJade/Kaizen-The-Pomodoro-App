@@ -31,6 +31,7 @@ li{
     --add-task-icn: #7964fd;
     --modal-bg: white;
     --cancel-icn: black;
+    --all-task-icn: #252323;
 }
 
 .dark-theme{
@@ -46,5 +47,6 @@ li{
     --add-task-icn: #664EFF ;
     --modal-bg: #4e4e4e;
     --cancel-icn: white;
+    --all-task-icn: #d1d0d0;
 }
 
