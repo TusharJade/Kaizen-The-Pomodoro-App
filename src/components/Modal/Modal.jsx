@@ -1,14 +1,20 @@
 import "./Modal.css";
 import { useTaskContextProvider } from "../../context/task-context";
 
-const Modal = ({ setModal, modalData, setModalData }) => {
+const Modal = ({ setModal, modalData, setModalData, edit }) => {
   const { taskDispatch } = useTaskContextProvider();
 
   const taskSubmiter = (e) => {
     e.preventDefault();
-    taskDispatch({ type: "ADD_TASK", payload: modalData });
     setModal(false);
     setModalData({ title: "", description: "", time: "" });
+    edit.editStatus
+      ? taskDispatch({
+          type: "EDIT_TASK",
+          payload: edit.editId,
+          payloadData: modalData,
+        })
+      : taskDispatch({ type: "ADD_TASK", payload: modalData });
   };
 
   return (
@@ -23,7 +29,10 @@ const Modal = ({ setModal, modalData, setModalData }) => {
         <div className="modal-box">
           <i
             className="fa-solid fa-xmark modal-close-icn"
-            onClick={() => setModal(false)}
+            onClick={() => {
+              setModal(false);
+              setModalData({ title: "", description: "", time: "" });
+            }}
           ></i>
           <input
             placeholder="Add title"
@@ -58,13 +67,22 @@ const Modal = ({ setModal, modalData, setModalData }) => {
           <div className="modal-btn-container">
             <button
               className="modal-btn modal-cancel-btn"
-              onClick={() => setModal(false)}
+              onClick={() => {
+                setModal(false);
+                setModalData({ title: "", description: "", time: "" });
+              }}
             >
               Cancel
             </button>
-            <button className="modal-btn modal-add-btn" type="submit">
-              Add
-            </button>
+            {edit.editStatus ? (
+              <button className="modal-btn modal-add-btn" type="submit">
+                Edit
+              </button>
+            ) : (
+              <button className="modal-btn modal-add-btn" type="submit">
+                Add
+              </button>
+            )}
           </div>
         </div>
       </form>

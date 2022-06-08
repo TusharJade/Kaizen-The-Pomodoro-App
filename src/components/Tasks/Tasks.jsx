@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTaskContextProvider } from "../../context/task-context";
 import "./Tasks.css";
 
-const Tasks = ({ tasks, setModal, setModalData }) => {
+const Tasks = ({ tasks, setModal, setModalData, setEdit }) => {
   const [checked, setChecked] = useState(false);
 
   const navigate = useNavigate();
@@ -29,6 +29,8 @@ const Tasks = ({ tasks, setModal, setModalData }) => {
           className="fa-solid fa-pen-to-square"
           onClick={() => {
             setModal(true);
+            setModalData(tasks);
+            setEdit((item) => ({ editStatus: true, editId: tasks._id }));
           }}
         ></i>
         <i

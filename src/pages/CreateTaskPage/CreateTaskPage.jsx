@@ -15,6 +15,8 @@ const CreateTaskPage = () => {
     time: "",
   });
 
+  const [edit, setEdit] = useState({ editStatus: false, editId: "" });
+
   return (
     <>
       <section className="tasks-container">
@@ -31,7 +33,10 @@ const CreateTaskPage = () => {
             <div className="todo-main-text">To-Do List</div>
             <i
               className="fa-solid fa-circle-plus add-task"
-              onClick={() => setModal(true)}
+              onClick={() => {
+                setModal(true);
+                setEdit((item) => ({ ...item, editStatus: false }));
+              }}
             ></i>
           </div>
           {taskState.tasks.length === 0 ? (
@@ -46,6 +51,7 @@ const CreateTaskPage = () => {
                     tasks={item}
                     setModal={setModal}
                     setModalData={setModalData}
+                    setEdit={setEdit}
                     key={item._id}
                   />
                 );
@@ -58,6 +64,7 @@ const CreateTaskPage = () => {
             setModal={setModal}
             modalData={modalData}
             setModalData={setModalData}
+            edit={edit}
           />
         ) : null}
       </section>

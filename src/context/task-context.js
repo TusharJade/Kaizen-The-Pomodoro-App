@@ -15,6 +15,20 @@ const taskReducerFunc = (taskState, action) => {
         ...taskState,
         tasks: taskState.tasks.filter((item) => item._id !== action.payload),
       };
+    case "EDIT_TASK":
+      return {
+        ...taskState,
+        tasks: taskState.tasks.map((item) =>
+          item._id === action.payload
+            ? {
+                ...item,
+                title: action.payloadData.title,
+                description: action.payloadData.description,
+                time: action.payloadData.time,
+              }
+            : item
+        ),
+      };
 
     default:
       return taskState;
