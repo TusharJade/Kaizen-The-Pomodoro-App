@@ -1,0 +1,34 @@
+.all-tasks-container{
+   display: flex;
+   align-items: center;
+   margin: 12px 0 0 0;
+}
+
+
+.task-checkbox{
+    margin: 1px 5px 0 0;
+    height: 1rem;
+    width: 15px;
+    cursor: pointer;
+}
+
+.taks-title{
+    font-size: 1.1rem;
+}
+
+.crossline{
+    text-decoration: line-through;
+}
+
+.all-task-icns{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-size: 1.15rem;
+    cursor: pointer;
+    color: var(--all-task-icn);
+}
+
+.all-task-icns > i {
+    margin: 0 0 0 15px;
+}

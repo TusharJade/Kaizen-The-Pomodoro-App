@@ -87,14 +87,14 @@ const Navbar = () => {
         <div className="bars">
           {toggle.hambergerIcn ? (
             <i
-              class="fa-solid fa-xmark cross-icn"
+              className="fa-solid fa-xmark cross-icn"
               onClick={() =>
                 setToggle((item) => ({ ...item, hambergerIcn: false }))
               }
             ></i>
           ) : (
             <i
-              class="fa-solid fa-bars"
+              className="fa-solid fa-bars"
               onClick={() =>
                 setToggle((item) => ({ ...item, hambergerIcn: true }))
               }

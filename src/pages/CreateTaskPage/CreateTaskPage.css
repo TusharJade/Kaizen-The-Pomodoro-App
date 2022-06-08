@@ -1,0 +1,111 @@
+.tasks-container{
+    position: absolute;
+    top: 3.7rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--white);
+    background-color: var(--task-page-bg);
+}
+
+.task-todo-box{
+    width: 70%;
+    margin: 3rem auto 0 auto ;
+}
+
+.welcome-text{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.task-text{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.todo-list-container{
+    background-color: var(--task-page-todo);
+    color: var(--task-page-text);
+    width: 72%;
+    margin: 1rem auto 0 auto;
+    padding: 1.7rem;
+    border-radius: 1.6rem;
+}
+
+.todo-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.todo-main-text{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.add-task{
+    color: #7964fd;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+
+@media (max-width:1000px) {
+    .task-todo-box{
+        width: 79%;
+        margin: 2.3rem auto 0 auto ;
+    }
+
+    .todo-list-container{
+        width: 83%;
+        padding: 1.4rem;
+    }
+
+    .welcome-text{
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .task-text{
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 12px;
+    }
+
+    .todo-main-text{
+        font-size: 1.23rem;
+        font-weight: 600;
+    }
+
+    .add-task{
+        font-size: 1.7rem;
+    }
+
+    .start-adding-task{
+        font-size: 15.5px;
+    }
+}
+
+@media (max-width:500px) {
+    .task-todo-box{
+        width: 80%;
+        margin: 2.3rem auto 0 auto ;
+    }
+
+    .todo-list-container{
+        width: 87%;
+        padding: 1.3rem 1.5rem;
+        border-radius: 1.2rem;
+    }
+
+    .task-text{
+        margin-top: 12px;
+    }
+
+    .add-task{
+        font-size: 1.5rem;
+    }
+
+}
