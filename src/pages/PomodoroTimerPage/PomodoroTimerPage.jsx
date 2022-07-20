@@ -1,5 +1,6 @@
-import { useState } from "react";
 import "./PomodoroTimerPage.css";
+import { useState } from "react";
+import { PomodoroClock } from "../../components/PomodoroClock/PomodoroClock";
 
 const PomodoroTimerPage = () => {
   const [modes, setModes] = useState("Work");
@@ -32,6 +33,7 @@ const PomodoroTimerPage = () => {
           Long break
         </button>
       </div>
+      <PomodoroClock />
     </section>
   );
 };
