@@ -1,16 +1,36 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PomodoroClock = () => {
-  const [progress, setProgress] = useState(80);
+  const [time, setTime] = useState(110);
+  const [progress, setProgress] = useState(22);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (active && time > 0) {
+      const interval = setInterval(() => {
+        setTime((time) => time - 1);
+      }, 1000);
+
+      return () => clearInterval(interval);
+    }
+  }, [time, active]);
+
+  const getTime = (time) => {
+    const min = Math.floor(time / 60);
+    const sec = time % 60;
+    return `${min < 10 ? "0" + min : min}:${sec < 10 ? "0" + sec : sec}`;
+  };
 
   return (
     <>
       <OuterCircle>
         <TimerLine progress={progress}>
           <InnerCircle>
-            <TimeText>5:00</TimeText>
-            <StartPause>Pause</StartPause>
+            <TimeText>{getTime(time)}</TimeText>
+            <StartPause onClick={() => setActive((state) => !state)}>
+              {active ? "Pause" : "Start"}
+            </StartPause>
           </InnerCircle>
         </TimerLine>
       </OuterCircle>
@@ -53,11 +73,10 @@ const InnerCircle = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  cursor: pointer;
 `;
 
 const TimeText = styled.h3`
-  font-size: 3.9rem;
+  font-size: 3.5rem;
   color: var(--white);
   font-weight: 600;
 `;
@@ -68,5 +87,6 @@ const StartPause = styled.button`
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--white);
+  cursor: pointer;
   letter-spacing: 4px;
 `;
