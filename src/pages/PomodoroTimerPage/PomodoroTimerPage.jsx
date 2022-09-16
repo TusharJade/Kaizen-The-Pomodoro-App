@@ -1,9 +1,9 @@
 import "./PomodoroTimerPage.css";
-import { useState } from "react";
 import { PomodoroClock } from "../../components/PomodoroClock/PomodoroClock";
+import { useClockContextProvider } from "../../context/clock-context";
 
 const PomodoroTimerPage = () => {
-  const [modes, setModes] = useState(0);
+  const { clockState, clockDispatch } = useClockContextProvider();
   return (
     <section className="pomodoro-clock-section">
       <div className="pomodoro-text">Pomodoro clock</div>
@@ -12,9 +12,11 @@ const PomodoroTimerPage = () => {
           return (
             <button
               className={`pomodoro-btns ${
-                modes === index ? "pomo-btn-active" : null
+                clockState.modes === index ? "pomo-btn-active" : null
               }`}
-              onClick={() => setModes(index)}
+              onClick={() =>
+                clockDispatch({ type: "SET_MODES", payload: index })
+              }
               key={index}
             >
               {item}
@@ -22,7 +24,7 @@ const PomodoroTimerPage = () => {
           );
         })}
       </div>
-      <PomodoroClock modes={modes} />
+      <PomodoroClock />
     </section>
   );
 };

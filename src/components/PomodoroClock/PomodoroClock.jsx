@@ -1,20 +1,23 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useClockContextProvider } from "../../context/clock-context";
 
 const PomodoroClock = () => {
-  const [time, setTime] = useState(110);
-  const [progress, setProgress] = useState(22);
-  const [active, setActive] = useState(false);
+  const { clockState, clockDispatch } = useClockContextProvider();
 
   useEffect(() => {
-    if (active && time > 0) {
+    if (clockState.runner && clockState.realClock > 0) {
       const interval = setInterval(() => {
-        setTime((time) => time - 1);
+        clockDispatch({ type: "REAL_CLOCK" });
       }, 1000);
 
       return () => clearInterval(interval);
     }
-  }, [time, active]);
+  }, [clockState.runner, clockState.realClock, clockDispatch]);
+
+  useEffect(() => {
+    clockDispatch({ type: "GO", payload: clockState.modes });
+  }, [clockState.realClock, clockDispatch, clockState.modes]);
 
   const getTime = (time) => {
     const min = Math.floor(time / 60);
@@ -25,15 +28,25 @@ const PomodoroClock = () => {
   return (
     <>
       <OuterCircle>
-        <TimerLine progress={progress}>
+        <TimerLine progress={clockState.progress}>
           <InnerCircle>
-            <TimeText>{getTime(time)}</TimeText>
-            <StartPause onClick={() => setActive((state) => !state)}>
-              {active ? "Pause" : "Start"}
+            <TimeText>{getTime(clockState.realClock)}</TimeText>
+            <StartPause onClick={() => clockDispatch({ type: "RUN_OR_STOP" })}>
+              {clockState.runner ? "Pause" : "Start"}
             </StartPause>
+            <Restart
+              onClick={() =>
+                clockDispatch({ type: "RESET", payload: clockState.modes })
+              }
+            >
+              {clockState.realClock === 0 && "RESET"}
+            </Restart>
           </InnerCircle>
         </TimerLine>
       </OuterCircle>
+      <SettingIcn>
+        <i class="fa-solid fa-gear"></i>
+      </SettingIcn>
     </>
   );
 };
@@ -44,7 +57,7 @@ const OuterCircle = styled.div`
   width: 19.4rem;
   height: 19.4rem;
   background-color: var(--white);
-  margin: 1.7rem auto;
+  margin: 1.8rem auto;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -56,7 +69,7 @@ const TimerLine = styled.div`
   width: 16rem;
   height: 16rem;
   background: conic-gradient(
-    #fad6b8 ${(props) => props.progress}%,
+    #d0d0d0 ${(props) => props.progress}%,
     transparent ${(props) => props.progress}%
   );
   border-radius: 50%;
@@ -65,8 +78,8 @@ const TimerLine = styled.div`
 `;
 
 const InnerCircle = styled.div`
-  width: 14.65rem;
-  height: 14.65rem;
+  width: 15rem;
+  height: 15rem;
   background-color: #5239f6;
   border-radius: 50%;
   display: flex;
@@ -89,4 +102,16 @@ const StartPause = styled.button`
   color: var(--white);
   cursor: pointer;
   letter-spacing: 4px;
+`;
+
+const Restart = styled(StartPause)`
+  color: #b40000b9;
+`;
+
+const SettingIcn = styled.div`
+  font-size: 1.7rem;
+  color: var(--nav-bg);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 `;
