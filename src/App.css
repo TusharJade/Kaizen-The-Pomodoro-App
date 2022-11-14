@@ -12,10 +12,9 @@ li{
 }
 
 :root{
-    --white: white;
-    --black: black;
+    --white: #ffffff;
+    --black: #000000;
     --main-color: #664EFF;
-    --modal-inputs-bg:#dcdbdb;
 }
 
 .light-theme{
@@ -30,6 +29,7 @@ li{
     --task-page-text: var(--black);
     --add-task-icn: #7964fd;
     --modal-bg: var(--white);
+    --modal-inputs-bg:#ededed;
     --cancel-icn: var(--black);
     --all-task-icn: #252323;
 }
@@ -46,7 +46,9 @@ li{
     --task-page-text: var(--white);
     --add-task-icn: #664EFF ;
     --modal-bg: #4e4e4e;
+    --modal-inputs-bg:#dcdbdb;
     --cancel-icn: var(--white);
     --all-task-icn: #d1d0d0;
+
 }
 

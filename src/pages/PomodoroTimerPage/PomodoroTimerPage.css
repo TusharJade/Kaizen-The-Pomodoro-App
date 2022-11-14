@@ -1,5 +1,5 @@
 .pomodoro-clock-section{
-    padding-top: 3.7rem;
+    margin-top: 3.7rem;
     background-color: var(--task-page-bg);
     position: fixed;
     top: 0;

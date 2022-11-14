@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useClockContextProvider } from "../../context/clock-context";
 
-const PomodoroClock = () => {
+const PomodoroClock = ({ show, setShow }) => {
   const { clockState, clockDispatch } = useClockContextProvider();
 
   useEffect(() => {
@@ -31,9 +31,13 @@ const PomodoroClock = () => {
         <TimerLine progress={clockState.progress}>
           <InnerCircle>
             <TimeText>{getTime(clockState.realClock)}</TimeText>
-            <StartPause onClick={() => clockDispatch({ type: "RUN_OR_STOP" })}>
-              {clockState.runner ? "Pause" : "Start"}
-            </StartPause>
+            {clockState.realClock > 0 && (
+              <StartPause
+                onClick={() => clockDispatch({ type: "RUN_OR_STOP" })}
+              >
+                {clockState.runner ? "Pause" : "Start"}
+              </StartPause>
+            )}
             <Restart
               onClick={() =>
                 clockDispatch({ type: "RESET", payload: clockState.modes })
@@ -44,7 +48,7 @@ const PomodoroClock = () => {
           </InnerCircle>
         </TimerLine>
       </OuterCircle>
-      <SettingIcn>
+      <SettingIcn onClick={() => setShow(!show)}>
         <i class="fa-solid fa-gear"></i>
       </SettingIcn>
     </>
@@ -105,12 +109,12 @@ const StartPause = styled.button`
 `;
 
 const Restart = styled(StartPause)`
-  color: #b40000b9;
+  color: #050000ff;
 `;
 
 const SettingIcn = styled.div`
   font-size: 1.7rem;
-  color: var(--nav-bg);
+  color: #e4e4e4;
   display: flex;
   justify-content: center;
   cursor: pointer;

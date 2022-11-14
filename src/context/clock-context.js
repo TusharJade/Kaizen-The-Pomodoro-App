@@ -69,13 +69,11 @@ const ClockContextProvider = ({ children }) => {
     modes: 0,
     progress: 100,
     realClock: 0,
-    worktime: 20,
+    worktime: 60 * 60,
     shortBreak: 15 * 60,
     longBreak: 30 * 60,
     runner: false,
   });
-
-  console.log(clockState.progress);
 
   useEffect(() => {
     switch (clockState.modes) {
