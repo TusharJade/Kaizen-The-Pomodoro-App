@@ -12,41 +12,43 @@ li{
 }
 
 :root{
-    --white: white;
-    --black: black;
+    --white: #ffffff;
+    --black: #000000;
     --main-color: #664EFF;
-    --modal-inputs-bg:#dcdbdb;
 }
 
 .light-theme{
-    --nav-bg: white;
-    --nav-text: black;
+    --nav-bg: var(--white);
+    --nav-text: var(--black);
     --nav-box-shadow: 0px 0px 15px 0px rgba(110,110,110,0.5);
     --footer-bg: #664EFF;
-    --landing-page-bg: white;
-    --landing-page-text: black;
+    --landing-page-bg: var(--white);
+    --landing-page-text: var(--black);
     --task-page-bg: #7964fd;
-    --task-page-todo: white;
-    --task-page-text: black;
+    --task-page-todo: var(--white);
+    --task-page-text: var(--black);
     --add-task-icn: #7964fd;
-    --modal-bg: white;
-    --cancel-icn: black;
+    --modal-bg: var(--white);
+    --modal-inputs-bg:#ededed;
+    --cancel-icn: var(--black);
     --all-task-icn: #252323;
 }
 
 .dark-theme{
     --nav-bg: #3e3e3e;
-    --nav-text: white;
+    --nav-text: var(--white);
     --nav-box-shadow: none;
     --footer-bg: #3e3e3e ;
     --landing-page-bg: #232527;
-    --landing-page-text: white;
+    --landing-page-text: var(--white);
     --task-page-bg: #232527;
     --task-page-todo: #3e3e3e;
-    --task-page-text: white;
+    --task-page-text: var(--white);
     --add-task-icn: #664EFF ;
     --modal-bg: #4e4e4e;
-    --cancel-icn: white;
+    --modal-inputs-bg:#dcdbdb;
+    --cancel-icn: var(--white);
     --all-task-icn: #d1d0d0;
+
 }
 

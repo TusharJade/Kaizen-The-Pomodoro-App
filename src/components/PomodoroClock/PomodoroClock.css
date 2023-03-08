@@ -1,0 +1,11 @@
+.pomodoro-cricle{
+    width: 19.4rem;
+    height: 19.4rem;
+    background-color: var(--white);
+    margin: 1.5rem auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(#4d31ff,#7662fe,#4d31ff);
+    box-shadow: 0px 0px 18px 3px rgb(57, 35, 205);
+}

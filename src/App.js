@@ -21,16 +21,17 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/tasks" element={<CreateTaskPage />} />
-        <Route path="/tasks/:taskID" element={<SinglePomdoroPage />} />
-        <Route path="/pomodoro-time" element={<PomodoroTimerPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/mockman" element={<Mockman />} />
-      </Routes>
+      <Navbar>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/tasks" element={<CreateTaskPage />} />
+          <Route path="/tasks/:taskID" element={<SinglePomdoroPage />} />
+          <Route path="/pomodoro-time" element={<PomodoroTimerPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/mockman" element={<Mockman />} />
+        </Routes>
+      </Navbar>
     </>
   );
 }
